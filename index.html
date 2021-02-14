@@ -192,6 +192,19 @@
 						<div class="row">
 							<div class="col-md-12 text-center">
 								<h2>Team AmongSus</h2>
+								<h3 id="counter" style="color:white;" > </h3>
+								<script>
+								 add();
+								 async function add() {
+								   let response = await fetch("https://oversmart-counter.herokuapp.com/");
+									if (response.ok) { 
+									  let ele = document.getElementById("counter"); 
+									  ele.innerHTML=await response.text();
+									} else {
+									console.log("HTTP-Error: " + response.status);
+								  }
+								}
+							  </script>
 							</div>
 							<div class="col-md-6 col-md-offset-3 text-center">
 								<p class="fh5co-social-icons">
